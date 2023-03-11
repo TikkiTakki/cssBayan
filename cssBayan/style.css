@@ -19,6 +19,7 @@ html {
   }
 
   .main {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -55,14 +56,13 @@ html {
     height: 50px;
     margin-bottom: 20px;
     opacity: 0;
-    z-index: -1;
   }
 
   .fa-plus {
     color: black;
     content: "\f067";
     font-size: medium;
-    transition: transform 0.5s ease-in-out;
+    transition: all .5s ease-in-out;    
   }
 
   .content {    
@@ -145,8 +145,8 @@ html {
     color: black;
   }
 
-  .input:checked ~ .exit {
-    transform: rotate(-45deg);
+  .input:checked ~ .fa-plus {
+    transform: rotate(45deg);
   }
 
   @media (min-width:820px) {
@@ -177,8 +177,7 @@ html {
     .content_git {
       width: 38vw;
       height: 60vh;
-    }
-  
+    }  
   }
   
   @media (min-width:1920px) {
@@ -223,12 +222,12 @@ html {
     opacity: 1;
     transition: ease-in-out;
   }
-  
+
   .input:hover ~ .list_item_name {
     color: black;
   }
 
-  .input:hover ~ .fa {
+  .input:hover ~ .fa-plus {
     transform:rotate(45deg);
   }
 
@@ -237,3 +236,4 @@ html {
     height: 32vh;
   }
 }
+
