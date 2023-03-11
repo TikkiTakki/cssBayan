@@ -6,16 +6,50 @@ html {
   body {
     display: flex;
     align-content: center;
-    font-weight: 700;
-    font-size: 2.6rem;
-    line-height: 1.6rem;
   }
 
   h1 {
-    text-align: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.2rem;
+    text-align: start;
     color: black;
-    padding: 40px;
+    padding: 20px 0 40px 0;
+    border-bottom: 2px solid gainsboro;
   }
+
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-bottom: 50%;
+    overflow: hidden;
+  }
+
+  .list {
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 10px 0;    
+  }
+
+  .list_item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-bottom: 2px solid gainsboro;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .list_item_name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    color: blue;
+    cursor: pointer;    
+  }  
 
   input {
     height: 50px;
@@ -23,81 +57,12 @@ html {
     opacity: 0;
     z-index: -1;
   }
-  .main {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50%;
-    overflow: hidden;
-  }
 
-  .list {
-    font-weight: 700;
-    font-size: 3rem;
-    padding: 10px;
-    
-  }
-
-  .list_item {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-  }
-
-  .list_item_name {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    border-bottom: 2px solid blue;
-  }
-
-  .content_codewars {
-    display: flex;
-    background-image: url('./img/codewars.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 360px;
-    height: 350px;
-  }
-
-  .content_deadine {
-    display: block;
-    background-image: url('./img/deadline.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 320px;
-    height: 350px;
-  }
-
-  .content_error {
-    display: block;
-    background-image: url('./img/error.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 320px;
-    height: 350px;
-  }
-
-  .content_google {
-    display: block;
-    background-image: url('./img/google.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 320px;
-    height: 350px;
-  }
-
-  .content_git {
-    display: block;
-    background-image: url('./img/git-problem.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 320px;
-    height: 350px;
+  .fa-plus {
+    color: black;
+    content: "\f067";
+    font-size: medium;
+    transition: transform 0.5s ease-in-out;
   }
 
   .content {    
@@ -110,29 +75,165 @@ html {
     width: 0;
     height: 0;
     transition: all .6s;
+    overflow: hidden;
   }
-  
+
+  .content_one {
+    display: flex;
+    background-image: url('./img/one-hour-before-deadline.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vw;
+    height: 37vh;
+    overflow: hidden;
+  }
+
+  .content_deadine {
+    display: block;
+    background-image: url('./img/deadline.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vw;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .content_error {
+    display: block;
+    background-image: url('./img/error.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vw;
+    height: 45vh;
+    overflow: hidden;
+  }
+
+  .content_google {
+    display: block;
+    background-image: url('./img/google.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vw;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .content_git {
+    display: block;
+    background-image: url('./img/git-problem.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80vw;
+    height: 50vh;
+    overflow: hidden;
+  }
+
   .input:checked ~ .content {
-    width: 450px;
-    height: 380px;
-    margin: 50px;
+    width: 100vw;
+    height: 70vh;
+    margin: 50px 0;
     opacity: 1;
     transition: ease-in-out;
   }
 
   .input:checked ~ .list_item_name {
-    color: rgb(112, 165, 42);
+    color: black;
   }
 
-  input:hover ~ .content {
-    width: 450px;
-    height: 380px;
+  .input:checked ~ .exit {
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width:820px) {
+    .list {
+      font-size: 2rem;
+    }
+
+    .content_one {
+      width: 42vw;
+      height: 50vh;
+    }
+  
+    .content_deadine {
+      width: 38vw;
+      height: 60vh;
+    }
+  
+    .content_error {
+      width: 40vw;
+      height: 60vh;
+    }
+  
+    .content_google {
+      width: 38vw;
+      height: 60vh;
+    }
+  
+    .content_git {
+      width: 38vw;
+      height: 60vh;
+    }
+  
+  }
+  
+  @media (min-width:1080px) {
+    h1 {
+      font-size: 4rem;
+      line-height: 1.6rem;
+    }
+    
+    .list {
+      font-size: 3rem;
+    }
+    
+    .content_one {
+      width: 30vw;
+      height: 43vh;
+    }
+  
+    .content_deadine {
+      width: 20vw;
+      height: 36vh;
+    }
+  
+    .content_error {
+      width: 23vw;
+      height: 40vh;
+    }
+  
+    .content_google {
+      width: 21vw;
+      height: 40vh;
+    }
+  
+    .content_git {
+      width: 21vw;
+      height: 40vh;
+    }
+    
+    input:hover ~ .content {
+    width: 30vw;
+    height: 45vh;
     margin: 50px;
     opacity: 1;
     transition: ease-in-out;
   }
   
-  .list_item:hover ~ .list_item_name {
-    color: rgb(112, 165, 42);
+  .input:hover ~ .list_item_name {
+    color: black;
   }
-  
+
+  .input:hover ~ .fa {
+    transform:rotate(45deg);
+  }
+
+  .input:checked ~ .content {
+    width: 30vw;
+    height: 45vh;
+  }
+}
