@@ -17,9 +17,17 @@ html {
     padding: 40px;
   }
 
+  input {
+    height: 50px;
+    margin-bottom: 20px;
+    opacity: 0;
+    z-index: -1;
+  }
   .main {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50%;
+    overflow: hidden;
   }
 
   .list {
@@ -32,6 +40,7 @@ html {
   .list_item {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
   }
 
   .list_item_name {
@@ -39,17 +48,6 @@ html {
     width: 100%;
     padding: 10px;
     border-bottom: 2px solid blue;
-  }
-
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(175, 172, 172);
-    border: 2px solid black;
-    width: 450px;
-    height: 380px;
-    margin: 50px;
   }
 
   .content_codewars {
@@ -100,4 +98,40 @@ html {
     background-size: cover;
     width: 320px;
     height: 350px;
+  }
+
+  .content {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(175, 172, 172);
+    border: 2px solid black;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: all .6s;
+  }
+
+  input:hover ~ .content {
+    width: 450px;
+    height: 380px;
+    margin: 50px;
+    opacity: 1;
+    transition: ease-in-out;
+  }
+  
+  .list_item:hover ~ .list_item_name {
+    color: rgb(112, 165, 42);
+  }
+  
+  .input:checked ~ .content {
+    width: 450px;
+    height: 380px;
+    margin: 50px;
+    opacity: 1;
+    transition: ease-in-out;
+  }
+
+  .input:checked ~ .list_item_name {
+    color: rgb(112, 165, 42);
   }
