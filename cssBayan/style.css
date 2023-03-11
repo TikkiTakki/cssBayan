@@ -62,7 +62,8 @@ html {
     color: black;
     content: "\f067";
     font-size: medium;
-    transition: all .5s ease-in-out;    
+    transition: all .5s ease-in-out;  
+    opacity: 0;  
   }
 
   .content {    
@@ -227,8 +228,8 @@ html {
     color: black;
   }
 
-  .input:hover ~ .fa-plus {
-    transform:rotate(45deg);
+  .input:hover ~ .list > .fa-plus {
+    transform: rotate(45deg);
   }
 
   .input:checked ~ .content {
@@ -241,4 +242,9 @@ html {
   .list:hover .list_item_name {
     color: black;
   }
+
+  .list:hover .fa-plus {
+    opacity: 1;
+  }
+
 }
