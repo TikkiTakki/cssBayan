@@ -237,3 +237,8 @@ html {
   }
 }
 
+@media(hover: hover) {
+  .list:hover .list_item_name {
+    color: black;
+  }
+}
