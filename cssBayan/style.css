@@ -62,8 +62,7 @@ html {
     color: black;
     content: "\f067";
     font-size: medium;
-    transition: all .5s ease-in-out;  
-    opacity: 0;  
+    transition: all .3s ease-in-out;  
   }
 
   .content {    
@@ -146,7 +145,7 @@ html {
     color: black;
   }
 
-  .input:checked ~ .fa-plus {
+  .input:checked ~ .list_item_name > .fa-plus {
     transform: rotate(45deg);
   }
 
@@ -190,6 +189,10 @@ html {
     .list {
       font-size: 3rem;
     }
+
+    .fa-plus {
+      opacity: 0;  
+    }
     
     .content_one {
       width: 30vw;
@@ -215,6 +218,11 @@ html {
       width: 21vw;
       height: 40vh;
     }
+
+    .input:checked ~ .content {
+      width: 30vw;
+      height: 45vh;
+    }
     
     input:hover ~ .content {
     width: 30vw;
@@ -228,7 +236,7 @@ html {
     color: black;
   }
 
-  .input:hover ~ .list > .fa-plus {
+  .input:hover ~ .list_item_name > .fa-plus {
     transform: rotate(45deg);
   }
 
@@ -246,5 +254,4 @@ html {
   .list:hover .fa-plus {
     opacity: 1;
   }
-
 }
